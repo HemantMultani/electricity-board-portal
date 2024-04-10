@@ -1,0 +1,68 @@
+<div class="popup">
+  <!-- Popup content -->
+  <div class="popup-content">
+    <!-- Close button -->
+    <span class="close" (click)="closePopup()">&times;</span>
+    <!-- Popup title -->
+    <h2>Application Detail</h2>
+    <!-- Form for application details -->
+    <form (ngSubmit)="onSubmit()">
+      <!-- ID field -->
+      <label>ID:</label>
+      <input type="text" [(ngModel)]="rowLevelData.ID" name="ID" readonly><br>
+      <!-- Applicant Name field -->
+      <label>Applicant Name:</label>
+      <input type="text" [(ngModel)]="rowLevelData.Applicant_Name" name="Applicant_Name"><br>
+      <!-- Gender field -->
+      <label>Gender:</label>
+      <input type="text" [(ngModel)]="rowLevelData.Gender" name="Gender"><br>
+      <!-- District field -->
+      <label>District:</label>
+      <input type="text" [(ngModel)]="rowLevelData.District" name="District"><br>
+      <!-- State field -->
+      <label>State:</label>
+      <input type="text" [(ngModel)]="rowLevelData.State" name="State"><br>
+      <!-- Pincode field -->
+      <label>Pincode:</label>
+      <input type="text" [(ngModel)]="rowLevelData.Pincode" name="Pincode"><br>
+      <!-- Ownership field -->
+      <label>Ownership:</label>
+      <input type="text" [(ngModel)]="rowLevelData.Ownership" name="Ownership"><br>
+      <!-- GovtID Type field -->
+      <label>GovtID Type:</label>
+      <input type="text" [(ngModel)]="rowLevelData.GovtID_Type" name="GovtID_Type" readonly><br>
+      <!-- ID Number field -->
+      <label>ID Number:</label>
+      <input type="text" [(ngModel)]="rowLevelData.ID_Number" name="ID_Number" readonly><br>
+      <!-- Category field -->
+      <label>Category:</label>
+      <input type="text" [(ngModel)]="rowLevelData.Category" name="Category"><br>
+      <!-- Load Applied field -->
+      <label>Load Applied:</label>
+      <input type="number" [(ngModel)]="rowLevelData.Load_Applied" name="Load_Applied"><br>
+      <!-- Date of Application field -->
+      <label>Date of Application:</label>
+      <input type="text" [(ngModel)]="rowLevelData.Date_of_Application" name="Date_of_Application" readonly><br>
+      <!-- Date of Approval field -->
+      <label>Date of Approval:</label>
+      <input type="text" [(ngModel)]="rowLevelData.Date_of_Approval" name="Date_of_Approval"><br>
+      <!-- Modified Date field -->
+      <label>Modified Date:</label>
+      <input type="text" [(ngModel)]="rowLevelData.Modified_Date" name="Modified_Date"><br>
+      <!-- Status field -->
+      <label>Status:</label>
+      <input type="text" [(ngModel)]="rowLevelData.Status" name="Status"><br>
+      <!-- Reviewer ID field -->
+      <label>Reviewer ID:</label>
+      <input type="text" [(ngModel)]="rowLevelData.Reviewer_ID" name="Reviewer_ID"><br>
+      <!-- Reviewer Name field -->
+      <label>Reviewer Name:</label>
+      <input type="text" [(ngModel)]="rowLevelData.Reviewer_Name" name="Reviewer_Name"><br>
+      <!-- Reviewer Comments field -->
+      <label>Reviewer Comments:</label>
+      <textarea [(ngModel)]="rowLevelData.Reviewer_Comments" name="Reviewer_Comments"></textarea><br>
+      <!-- Submit button -->
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+</div>

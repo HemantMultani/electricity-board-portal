@@ -1,0 +1,27 @@
+<div class="search-container">
+  <!-- Input field for searching Application ID -->
+  <input type="text" placeholder="Enter Application ID" class="search-input" [(ngModel)]="searchQuery">
+  <button class="search-button" (click)="search()">Search</button>
+  <!-- Date picker for 'from' date -->
+  <input type="date" class="date-picker to-picker" [(ngModel)]="fromDate">
+  <!-- Date picker for 'to' date -->
+  <input type="date" class="date-picker from-picker" [(ngModel)]="toDate">
+  <!-- Button to apply date filters -->
+  <button class="apply-button" (click)="apply()">Apply</button>
+  <button class="reset-button" (click)="reset()">Reset</button>
+
+</div>
+
+<div class="ag-grid">
+  <!-- Display the ag-grid Angular component -->
+  <ag-grid-angular style="width: 95%; height: 330px; flex: '1 1 auto'" class="ag-theme-alpine"
+      [rowData]="rowData" 
+      [columnDefs]="columnDefs" 
+      [pagination]="true" 
+      [paginationPageSize]="paginationPageSize" 
+      [defaultColDef]="defaultColDef">
+  </ag-grid-angular>
+</div>
+
+<!-- Display the edit request component conditionally based on 'showPopup' -->
+<app-edit-request *ngIf="showPopup" [rowLevelData]="selectedRowData" (closePopupEvent)="onClosePopup($event)"></app-edit-request>

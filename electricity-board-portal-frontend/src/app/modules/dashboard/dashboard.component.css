@@ -1,0 +1,29 @@
+
+.dashboard-body{
+    /* padding-top: 70px; */
+    padding-left: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.graph-filters{
+    display: flex;
+    flex-direction: row;
+}
+
+.status-filter{
+    padding-left: 40px;
+    padding-right: 60px;
+    width: 220px;
+}
+
+.year-filter{
+    background-color: white;
+    border-width: 1px;
+    border-radius: 5px;
+}
+
+
+.graph{
+    padding-top: 50px;
+}

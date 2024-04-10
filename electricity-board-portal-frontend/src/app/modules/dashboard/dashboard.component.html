@@ -1,0 +1,42 @@
+<div class="dashboard-body">
+
+    <!-- This section represents filters for the graph -->
+
+    <div class="graph-filters">
+        <!-- 
+          This div contains a dropdown component for selecting statuses.
+          It uses ng-multiselect-dropdown for multiple item selection.
+        -->
+        <div class="status-filter">
+            <ng-multiselect-dropdown
+            class="dropdown-container"
+            [settings]="dropdownSettings"
+            [data]="dropdownList"
+            [(ngModel)]="selectedItems"
+            (onSelect)="onItemSelect($event)"
+            (onDeSelect)="onItemSelect($event)"
+            (onSelectAll)="onSelectAll($event)"
+            >
+            </ng-multiselect-dropdown>
+        </div>
+        
+        <!-- 
+          This select dropdown allows selecting a year.
+          It binds to the selectedYear property and triggers onYearSelect method on change.
+        -->
+        <select [(ngModel)]="selectedYear" class="year-filter" (ngModelChange)="onYearSelect($event)">
+            <option *ngFor="let item of yearsList" [value]="item">{{ item }}</option>
+        </select>
+    </div>
+
+    <!-- 
+      This section represents the vertical bar chart component.
+      It uses ngx-charts-bar-vertical component for data visualization.
+    -->
+    <ngx-charts-bar-vertical class="graph"
+    [view]="view" [gradient]="gradient" [xAxis]="showXAxis" [yAxis]="showYAxis"
+    [legend]="showLegend" [showXAxisLabel]="showXAxisLabel" [showYAxisLabel]="showYAxisLabel" [xAxisLabel]="xAxisLabel"
+    [yAxisLabel]="yAxisLabel"  [results]="chartData"
+    >
+    </ngx-charts-bar-vertical>
+</div>
